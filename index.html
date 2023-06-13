@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css" />
+
+</head>
+<style>
+    .terminal {
+        height: 250px;
+        padding: 10px 20px;
+        border-radius: 4px;
+        background-color: #2d2e2c;
+    }
+</style>
+
+<body>
+    <center></center>
+
+    <div id="terminal" class="terminal"></div>
+</body>
+
+</html>
+<script>
+    $("#terminal").terminal({
+        hello: function() {
+            this.echo("Olá, Bem Vindo(a) ao Terminal!");
+        },
+        help: function() {
+            this.echo(
+                "Opções de Comandos\n\
+    contact      : Como entrar em contato comigo :)\n\
+    founder      : Infos do criador\n\
+    hello        : Mensagem de saudação\n\
+    skills       : Mostra lista de habilidades do David\n\
+    social       : Minhas redes sociais\n\
+        ");
+        },
+        skills: function() {
+            this.echo("A fazer...");
+        },
+        founder: function() {
+            this.echo("David Ricardo da Rosa Carollo, 1999, Salvador BA");
+        },
+        social: function() {
+            this.echo(
+                "Minhas Redes Sociais\n\
+    github       : xDAVIDBECKER24x\n\
+    linkedin     : david-ricardo-da-rosa-carollo\n\
+    instagram    : @Beckynhoo\n\
+    behance      : /beemobot\n\
+        ");
+        },
+        contact: function() {
+            this.echo(
+                "Contate-me através\n\
+    email        : drcarollo123@gmail.com\n\
+    tel          : +55 (11) 979841811 \n\
+    linkedin     : david-ricardo-da-rosa-carollo\n\
+        ");
+        },
+    }, {
+        greetings: "Seja Bem Vindo(a), Fique à vontade :) - Para saber a lista de comandos digite 'help'",
+    });
+</script>
