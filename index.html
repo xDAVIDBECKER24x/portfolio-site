@@ -6,10 +6,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css" />
 </head>
 <style>
-    .terminal-wrapper {
-        justify-content: center;
-    }
-    
     .terminal {
         margin-inline: 2% 2%;
         padding: 10px 20px;
@@ -18,8 +14,7 @@
         font-family: sans-serif;
         max-width: 100vw;
         min-width: 800px;
-        max-height: 95vh;
-        min-height: 300px;
+        height: 500px;
     }
 </style>
 
@@ -27,68 +22,126 @@
     <div class="terminal-wrapper">
         <div id="terminal" class="terminal"></div>
     </div>
-
 </body>
 
 </html>
 <script>
-    $("#terminal").terminal({
-        hello: function() {
-            this.echo("Olá, Bem Vindo(a) ao Terminal!");
-        },
-        help: function() {
-            this.echo(
-                "Opções de Comandos\n\
-    [[;yellow;]biography    [[;white;]: Um pouco sobre minha pessoa\n\
-    [[;yellow;]contact      [[;white;]: Como entrar em contato comigo :)\n\
-    [[;yellow;]courses      [[;white;]: Certificações que possuo\n\
-    [[;yellow;]clean        [[;white;]: Limpa o terminal\n\
-    [[;yellow;]creator      [[;white;]: Infos do criador\n\
-    [[;yellow;]education    [[;white;]: Veja minhas formações\n\
-    [[;yellow;]hello        [[;white;]: Mensagem de saudação\n\
-    [[;yellow;]projects     [[;white;]: Projetos que trabalhei\n\
-    [[;yellow;]skills       [[;white;]: Mostra lista de habilidades do David\n\
-    [[;yellow;]social       [[;white;]: Minhas redes sociais\n\
-    [[;yellow;]work         [[;white;]: Experiências profissionais"
-            );
-        },
-        skills: function() {
-            this.echo("A fazer...");
-        },
-        creator: function() {
-            this.echo("David Ricardo da Rosa Carollo, 1999, Salvador BA");
-        },
-        home: function() {
-            this.echo("David Ricardo da Rosa Carollo, 1999, Salvador BA");
-        },
-        social: function() {
-            this.echo(
-                "Minhas Redes Sociais\n\
+    $(function() {
+        terminal = $("#terminal").terminal({
+
+            hello: function() {
+                this.echo("Olá, Bem Vindo(a) ao Terminal!");
+            },
+
+            help: function() {
+                this.echo(
+                    "Opções de Comandos\n\
+      [[;yellow;]biography    [[;white;]: Um pouco sobre minha pessoa\n\
+      [[;yellow;]contact      [[;white;]: Como entrar em contato comigo :)\n\
+      [[;yellow;]courses      [[;white;]: Certificações que possuo\n\
+      [[;yellow;]clean        [[;white;]: Limpa o terminal\n\
+      [[;yellow;]creator      [[;white;]: Infos do criador\n\
+      [[;yellow;]education    [[;white;]: Veja minhas formações\n\
+      [[;yellow;]hello        [[;white;]: Mensagem de saudação\n\
+      [[;yellow;]projects     [[;white;]: Projetos que trabalhei\n\
+      [[;yellow;]skills       [[;white;]: Mostra lista de habilidades do David\n\
+      [[;yellow;]social       [[;white;]: Minhas redes sociais\n\
+      [[;yellow;]work         [[;white;]: Experiências profissionais"
+                );
+            },
+
+            skills: function() {
+                this.echo("A fazer...");
+            },
+
+            work: function() {
+                this.echo(
+                    "Minhas Experiências\n\
+💼 [[;yellow;]Pashal - Pashal Locadora de Equipamentos Ltda\n\
+    [[;gray;]- 💻 Desenvolvedor / Suporte Infraestrutura\n\
+    - 📅 2019-2019\n\
+    - 🌍 São Paulo, Brasil\n\n\
+💼 [[;yellow;]Argotechno\n\
+    [[;gray;]- 💻 Desenvolvedor / Analista de Testes\n\
+    - 📅 2019-2021\n\
+    - 🌍 São Paulo, Brasil\n\n\
+💼 [[;yellow;]Melhortaxa\n\
+    [[;gray;]- 💻 Desenvolvedor\n\
+    - 📅 2021-2021\n\
+    - 🌍 São Paulo, Brasil\n\n\
+💼 [[;yellow;]Beltsys Plus Consultoria e Informática\n\
+    [[;gray;]- 💻 Desenvolvedor\n\
+    - 📅 2022-2022\n\
+    - 🌍 São Paulo, Brasil\n\n\
+💼 [[;yellow;]HCFMUSP - Hospital das Clínicas e Faculdade Medicina do Estado de São Paulo - \n\
+    [[;gray;]- 💻 Desenvolvedor / Analista de Sistemas\n\
+    - 📅 2022-Atual\n\
+    - 🌍 São Paulo, Brasil"
+
+
+                );
+            },
+
+            creator: function() {
+                this.echo("David Ricardo da Rosa Carollo, 1999, Salvador BA");
+            },
+
+            education: function() {
+                this.echo(
+                    "Minhas Formações\n\
+🎓 [[;yellow;]Análise e Desenvolvimento de Sistemas\n\
+    [[;gray;]- 📅 2017-2020 (Incompleto)\n\
+    - 🏬 FATEC - Faculdade de Tecnologia de São Paulo\n\
+    - 🌍 São Paulo, Brasil\n\n\
+🎓 [[;yellow;]Design\n\
+    [[;gray;]- 📅 2023-2027 (Incompleto)\n\
+    - 🏬 Mackenzie - Universidade Presbiteriana Mackenzie\n\
+    - 🌍 São Paulo, Brasil"
+                );
+            },
+
+            home: function() {
+                this.echo("David Ricardo da Rosa Carollo, 1999, Salvador BA");
+            },
+
+            ls: function() {
+                this.echo("David Ricardo da Rosa Carollo, 1999, Salvador BA");
+            },
+
+            social: function() {
+                this.echo(
+                    "Minhas Redes Sociais\n\
     [[;yellow;]github       [[;white;]: https://github.com/xDAVIDBECKER24x\n\
     [[;yellow;]linkedin     [[;white;]: https://www.linkedin.com/in/david-ricardo-da-rosa-carollo-5a1581184/\n\
     [[;yellow;]instagram    [[;white;]: https://www.instagram.com/Beckynhoo\n\
     [[;yellow;]behance      [[;white;]: https://www.behance.net/beemobot\n\
-        "
-            );
-        },
-        contact: function() {
-            this.echo(
-                "Contate-me através\n\
+          "
+                );
+            },
+
+            contact: function() {
+                this.echo(
+                    "Contate-me através\n\
     [[;yellow;]email        [[;white;]: drcarollo123@gmail.com\n\
     [[;yellow;]tel          [[;white;]: +5511979841811 \n\
     [[;yellow;]linkedin     [[;white;]: https://www.linkedin.com/in/david-ricardo-da-rosa-carollo-5a1581184/\n\
     [[;yellow;]zap zap      [[;white;]: https://whatsa.me/5511979841811\n\
-        "
-            );
-        },
-    }, {
-        greetings: '[[;green;]\n\
- _______                  _             _   _____           _    __      _ _              \n\
-|__   __|                (_)           | | |  __ \\         | |  / _|    | (_)            \n\
-   | | ___ _ __ _ __ ___  _ _ __   __ _| | | |__) |__  _ __| |_| |_ ___ | |_  ___         \n\
-   | |/ _ \\  __|  _   _ \\| |  _ \\ / _  | | |  ___/ _ \\|  __| __|  _/ _ \\| | |/ _ \\  \n\
-   | |  __/ |  | | | | | | | | | | (_| | | | |  | (_) | |  | |_| || (_) | | | (_)|        \n\
-   |_|\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_| |_|   \\___/|_|   \\__|_| \\___/|_|_|\\___/  \n\n\
+          "
+                );
+            },
+
+        }, {
+            greetings: '[[;green;]\n\
+  _______                  _             _   _____           _    __      _ _              \n\
+ |__   __|                (_)           | | |  __ \\         | |  / _|    | (_)            \n\
+    | | ___ _ __ _ __ ___  _ _ __   __ _| | | |__) |__  _ __| |_| |_ ___ | |_  ___         \n\
+    | |/ _ \\  __|  _   _ \\| |  _ \\ / _  | | |  ___/ _ \\|  __| __|  _/ _ \\| | |/ _ \\  \n\
+    | |  __/ |  | | | | | | | | | | (_| | | | |  | (_) | |  | |_| || (_) | | | (_)|        \n\
+    |_|\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_| |_|   \\___/|_|   \\__|_| \\___/|_|_|\\___/  \n\n\
 [[;white;]Seja Bem Vindo(a), Fique à vontade :) - Para saber a lista de comandos digite [[;yellow;]"help"',
+        });
+
+        terminal.set_prompt("> [[;white;]guest@portfolio-server:~ # ");
+
     });
 </script>
