@@ -12,8 +12,12 @@
     }
     
     .box {
+        font-family: Helvetica;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        padding: 0 8 8 8px;
         margin-inline: 2% 2%;
-        background-color: #22272E;
+        background-color: #22272e;
         border-color: #444c56;
         color: #b9b9b9;
         border-radius: var(--borderRadius-medium, 6px);
@@ -23,15 +27,6 @@
     
     .color-shadow-medium {
         box-shadow: var(--color-shadow-medium) !important;
-    }
-    
-    .my-4 {
-        margin-top: var(--base-size-24, 24px) !important;
-        margin-bottom: var(--base-size-24, 24px) !important;
-    }
-    
-    .p-3 {
-        padding: var(--base-size-16, 16px) !important;
     }
     
     .terminal {
@@ -45,19 +40,34 @@
         min-width: 800px;
         height: 450px;
     }
+    
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .title img {
+        padding: 8px;
+    }
+    
+    .description {
+        text-align: justify;
+        margin: -8 16 -8 16px;
+    }
 </style>
 
 <body>
-    <div class="box p-3 my-4 color-shadow-medium js-notice">
-        <div class="d-flex">
-            <h3 class="flex-auto mb-2 h5">Bem</h3>
+    <div class="box color-shadow-medium">
+        <div class="title">
+            <h1>Olá 👋 Aqui é o David</h1>
+            <img width="64px" height="64px" src="beemo.gif" />
         </div>
-        <p class="">
-            We’re updating the cards and ranking all the time, so check back regularly. At first, you might need to follow some people or star some repositories to get started
-            <g-emoji alias="seedling" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f331.png" class="emoji emoji-icon">🌱</g-emoji>.
-        </p>
-        <div class="">
-            <img />
+        <div class="description">
+            <p>
+                Sou desenvolvedor de software com quatro anos de experiência na indústria, fiz essa terminal para apresentar um pouco sobre minha pessoa e experiências de forma interativa. Já trabalhei em uma variedade de projetos, desde desenvolvimento web até aplicativos
+                móveis, e contribuí ativamente para muitos projetos ao longo da minha carreira profissional.
+            </p>
         </div>
     </div>
     <div class="terminal-wrapper">
