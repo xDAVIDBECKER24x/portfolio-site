@@ -4,16 +4,14 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <style>
     body {
-        /* background-color: #212220; */
         background-color: #1c2128;
         margin: 0;
-
     }
-
-
+    
     .container {
         margin-inline: 10% 10%;
         max-width: 80vw;
@@ -21,7 +19,7 @@
         min-width: 800px;
         height: 450px;
     }
-
+    
     .box {
         font-family: Helvetica;
         margin-top: 16px;
@@ -34,73 +32,76 @@
         border-style: solid;
         border-width: var(--borderWidth-thin, 1px);
     }
-
+    
     .color-shadow-medium {
         box-shadow: var(--color-shadow-medium) !important;
     }
-
+    
     .terminal {
         padding: 10px 20px;
         border-radius: 4px;
-        /* background-color: #2d2e2c; */
         background-color: #22272e;
         font-family: sans-serif;
-      
+        height: fit-content;
     }
-
+    
     .title {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
+    
     .title img {
         margin-left: 8px;
         padding: 8px;
     }
-
+    
     .description {
         text-align: justify;
         margin: -18 32 -8 8px;
+    }
+    
+    .animate__animated .animate__fadeInDown {
+        --animate-duration: 2s;
+    }
+    
+    .animate__animated .animate__fadeIn {
+        --animate-duration: 5s;
     }
 </style>
 
 <body>
     <div class="container">
-        <div class="box color-shadow-medium">
+        <div class="animate__animated animate__fadeInDown box color-shadow-medium">
             <div class="title">
                 <h1>Olá 👋 Aqui é o David</h1>
                 <img width="64px" height="64px" src="beemo.gif" />
             </div>
             <div class="description">
                 <p>
-                    "Sou desenvolvedor de software com quatro anos de experiência na indústria, fiz essa terminal para
-                    apresentar um pouco sobre minhas experiências de forma interativa. Já trabalhei em uma
-                    variedade de projetos, desde desenvolvimento web até aplicativos
+                    "Sou desenvolvedor de software com quatro anos de experiência na indústria, fiz essa terminal para apresentar um pouco sobre minhas experiências de forma interativa. Já trabalhei em uma variedade de projetos, desde desenvolvimento web até aplicativos
                     móveis, e contribuí ativamente para muitos projetos ao longo da minha carreira profissional"
                 </p>
             </div>
         </div>
-        <div class="terminal-wrapper">
+        <div class="animate__animated animate__fadeIn terminal-wrapper">
             <div id="terminal" class="terminal"></div>
         </div>
     </div>
-
 </body>
 
 </html>
 <script>
-
-    var h = window.innerHeight
+    var h = window.innerHeight;
     $(".terminal").css("height", h - 200);
 
-    $(function () {
+    $(function() {
         terminal = $("#terminal").terminal({
-            hello: function () {
+            hello: function() {
                 this.echo("Olá, Bem Vindo(a) ao Terminal!");
             },
 
-            help: function () {
+            help: function() {
                 this.echo(
                     "Opções de Comandos\n\
     [[;yellow;]home         [[;white;]: Retorna a tela inicial\n\
@@ -118,15 +119,15 @@
                 );
             },
 
-            skills: function () {
+            skills: function() {
                 this.echo("A fazer...");
             },
 
-            biography: function () {
+            biography: function() {
                 this.echo("A fazer...");
             },
 
-            contact: function () {
+            contact: function() {
                 this.echo(
                     "Contate-me através\n\
     [[;yellow;]email        [[;white;]: drcarollo123@gmail.com\n\
@@ -137,15 +138,15 @@
                 );
             },
 
-            courses: function () {
+            courses: function() {
                 this.echo("A fazer...");
             },
 
-            creator: function () {
+            creator: function() {
                 this.echo("David Ricardo da Rosa Carollo, 1999, Salvador BA");
             },
 
-            education: function () {
+            education: function() {
                 this.echo(
                     "Minhas Formações\n\
 🎓 [[;yellow;]Análise e Desenvolvimento de Sistemas\n\
@@ -159,11 +160,11 @@
                 );
             },
 
-            ls: function () {
+            ls: function() {
                 this.echo("David Ricardo da Rosa Carollo, 1999, Salvador BA");
             },
 
-            social: function () {
+            social: function() {
                 this.echo(
                     "Minhas Redes Sociais\n\
     [[;yellow;]github       [[;white;]: https://github.com/xDAVIDBECKER24x\n\
@@ -174,7 +175,7 @@
                 );
             },
 
-            home: function () {
+            home: function() {
                 this.exec("clear");
                 this.echo(
                     '[[;green;]\n\
@@ -188,7 +189,7 @@
                 );
             },
 
-            work: function () {
+            work: function() {
                 this.echo(
                     "Minhas Experiências\n\
 💼 [[;yellow;]Pashal - Pashal Locadora de Equipamentos Ltda\n\
